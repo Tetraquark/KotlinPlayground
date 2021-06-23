@@ -1,0 +1,5 @@
+package = multiplier
+headers = multiplier.h
+headerFilter = multiplier.h
+staticLibraries = libmultiplier.a
+linkerOpts = -lmultiplier

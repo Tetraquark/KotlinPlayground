@@ -1,12 +1,7 @@
-/*
- * Copyright 2019 IceRock MAG Inc. Use of this source code is governed by the Apache 2.0 license.
- */
-
 plugins {
     plugin(Deps.Plugins.androidApplication)
     plugin(Deps.Plugins.kotlinAndroid)
     plugin(Deps.Plugins.kotlinKapt)
-    plugin(Deps.Plugins.mokoUnits)
 }
 
 android {
@@ -22,15 +17,12 @@ android {
         minSdkVersion(Deps.Android.minSdk)
         targetSdkVersion(Deps.Android.targetSdk)
 
-        applicationId = "org.example.app"
+        applicationId = "ru.tetraquark.kotlin.playground.app"
 
         versionCode = 1
         versionName = "0.1.0"
 
         vectorDrawables.useSupportLibrary = true
-
-        val url = "https://newsapi.org/v2/"
-        buildConfigField("String", "BASE_URL", "\"$url\"")
     }
 
     buildTypes {
@@ -53,14 +45,6 @@ dependencies {
     implementation(Deps.Libs.Android.appCompat)
     implementation(Deps.Libs.Android.material)
     implementation(Deps.Libs.Android.recyclerView)
-    implementation(Deps.Libs.Android.swipeRefreshLayout)
-    implementation(Deps.Libs.Android.mokoMvvmDataBinding)
 
     implementation(project(":mpp-library"))
-}
-
-multiplatformUnits {
-    classesPackage = "org.example.app"
-    dataBindingPackage = "org.example.app"
-    layoutsSourceSet = "main"
 }

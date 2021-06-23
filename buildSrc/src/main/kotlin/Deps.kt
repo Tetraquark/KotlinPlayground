@@ -16,9 +16,9 @@ object Deps {
     private const val testExtJunitVersion = "1.1.1"
 
     // should be as kotlin version! see buildSrc/build.gradle.kts
-    private const val kotlinTestVersion = "1.4.31"
+    private const val kotlinTestVersion = "1.4.32"
     // should be as kotlin version! see buildSrc/build.gradle.kts
-    private const val kotlinxSerializationPluginVersion = "1.4.31"
+    private const val kotlinxSerializationPluginVersion = "1.4.32"
     private const val kotlinxSerializationVersion = "1.1.0"
     private const val kotlinxDateTimeVersion = "0.1.1"
     private const val coroutinesVersion = "1.4.3-native-mt"
@@ -188,20 +188,9 @@ object Deps {
     }
 
     object Modules {
-        val domain = MultiPlatformModule(
-            name = ":mpp-library:domain",
+        val shared = MultiPlatformModule(
+            name = ":mpp-library:shared",
             exported = true
         )
-
-        object Feature {
-            val config = MultiPlatformModule(
-                name = ":mpp-library:feature:config",
-                exported = true
-            )
-            val list = MultiPlatformModule(
-                name = ":mpp-library:feature:list",
-                exported = true
-            )
-        }
     }
 }
